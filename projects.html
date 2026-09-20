@@ -7,215 +7,268 @@
 
     <title>Projects | Thenuji Adikari</title>
 
-    <!-- MAIN CSS -->
-   <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #111c31;
-    color: white;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #111c31;
+            color: white;
+        }
 
-header {
-    width: 100%;
-    height: 80px;
-    background: #0f172a;
-    border-bottom: 1px solid #1e293b;
-}
+        /* ================= NAVIGATION ================= */
 
-.navbar {
-    max-width: 1200px;
-    height: 80px;
-    margin: auto;
-    padding: 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+        header {
+            width: 100%;
+            height: 80px;
+            background: #0f172a;
+            border-bottom: 1px solid #1e293b;
+        }
 
-.logo {
-    color: white;
-    font-size: 23px;
-    font-weight: bold;
-    text-decoration: none;
-}
+        .navbar {
+            max-width: 1200px;
+            height: 80px;
+            margin: auto;
+            padding: 0 30px;
 
-.logo span {
-    color: #38bdf8;
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.nav-links {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-}
+        .logo {
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
-.nav-links a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 15px;
-}
+        .logo span {
+            color: #38bdf8;
+        }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #38bdf8;
-}
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            list-style: none;
+        }
 
-.cv-btn {
-    background: #38bdf8;
-    color: #0f172a;
-    padding: 11px 20px;
-    border-radius: 7px;
-    text-decoration: none;
-    font-weight: bold;
-}
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 15px;
+        }
 
-.menu-btn {
-    display: none;
-}
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #38bdf8;
+        }
 
-.projects-page {
-    min-height: calc(100vh - 80px);
-    padding: 70px 30px 80px;
-}
+        /* ================= CV BUTTON ================= */
 
-.projects-container {
-    max-width: 1200px;
-    margin: auto;
-}
+        .cv-btn {
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 11px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-.projects-heading {
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto 55px;
-}
+        .cv-btn:hover {
+            background: #7dd3fc;
+            transform: translateY(-2px);
+        }
 
-.section-label {
-    color: #38bdf8;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
 
-.projects-heading h1 {
-    font-size: 46px;
-    margin-bottom: 18px;
-}
+        /* ================= PROJECTS PAGE ================= */
 
-.projects-intro {
-    color: #94a3b8;
-    font-size: 17px;
-    line-height: 1.7;
-}
+        .projects-page {
+            min-height: calc(100vh - 80px);
+            padding: 70px 30px 80px;
+        }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
+        .projects-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 55px;
+        }
 
-.project-card {
-    background: #0f172a;
-    border: 1px solid #1e293b;
-    border-radius: 15px;
-    padding: 32px;
-    min-height: 400px;
+        .section-label {
+            color: #38bdf8;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-    display: flex;
-    flex-direction: column;
+        .projects-heading h1 {
+            font-size: 46px;
+            margin-bottom: 18px;
+        }
 
-    transition: 0.3s;
-}
+        .projects-heading > p:last-child {
+            color: #94a3b8;
+            font-size: 17px;
+            line-height: 1.7;
+        }
 
-.project-card:hover {
-    transform: translateY(-8px);
-    border-color: #38bdf8;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-}
+        /* ================= PROJECT GRID ================= */
 
-.project-number {
-    color: #38bdf8;
-    font-size: 40px;
-    font-weight: bold;
-    opacity: 0.3;
-    margin-bottom: 20px;
-}
+        .projects-grid {
+            max-width: 1000px;
+            margin: auto;
 
-.project-card h2 {
-    font-size: 23px;
-    margin-bottom: 18px;
-}
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
 
-.project-card > p {
-    color: #94a3b8;
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
+        .project-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 15px;
+            padding: 32px;
+            min-height: 400px;
 
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 25px;
-}
+            display: flex;
+            flex-direction: column;
 
-.project-tech span {
-    background: #162a43;
-    color: #38bdf8;
-    padding: 7px 11px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: bold;
-}
+            transition: 0.3s;
+        }
 
-.project-btn {
-    margin-top: auto;
-    align-self: flex-start;
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
 
-    background: #38bdf8;
-    color: #0f172a;
+        .project-number {
+            color: #38bdf8;
+            font-size: 40px;
+            font-weight: bold;
+            opacity: 0.3;
+            margin-bottom: 20px;
+        }
 
-    padding: 11px 20px;
-    border-radius: 7px;
+        .project-card h2 {
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
 
-    text-decoration: none;
-    font-weight: bold;
-}
+        .project-card > p {
+            color: #94a3b8;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
 
-.project-btn:hover {
-    background: #7dd3fc;
-}
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
 
-@media (max-width: 900px) {
-    .projects-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
+        .project-tech span {
+            background: #162a43;
+            color: #38bdf8;
+            padding: 7px 11px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
 
-@media (max-width: 700px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
+        .project-btn {
+            margin-top: auto;
+            align-self: flex-start;
 
-    .nav-links {
-        display: none;
-    }
+            background: #38bdf8;
+            color: #0f172a;
 
-    .cv-btn {
-        display: none;
-    }
+            padding: 11px 20px;
+            border-radius: 7px;
 
-    .projects-heading h1 {
-        font-size: 36px;
-    }
-}
-</style>
+            text-decoration: none;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .project-btn:hover {
+            background: #7dd3fc;
+            transform: translateY(-2px);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: #0f172a;
+                padding: 25px;
+                flex-direction: column;
+                gap: 20px;
+                border-top: 1px solid #1e293b;
+                z-index: 1000;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .cv-btn {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .projects-page {
+                padding: 50px 20px;
+            }
+
+            .projects-heading h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -223,14 +276,18 @@ header {
     <!-- ================= NAVIGATION ================= -->
 
     <header>
+
         <nav class="navbar">
 
             <!-- LOGO -->
+
             <a href="index.html" class="logo">
                 Thenuji <span>Adikari</span>
             </a>
 
+
             <!-- NAVIGATION LINKS -->
+
             <ul class="nav-links" id="navLinks">
 
                 <li>
@@ -255,14 +312,18 @@ header {
 
             </ul>
 
-            <!-- DOWNLOAD CV -->
-<a href="Thenuji_Adikari_CV.pdf"
-   class="cv-btn"
-   download>
-    Download CV
-</a>
 
-            <!-- MOBILE MENU BUTTON -->
+            <!-- DOWNLOAD CV -->
+
+            <a href="Thenuji_Adikari_CV.pdf"
+               class="cv-btn"
+               download>
+                Download CV
+            </a>
+
+
+            <!-- MOBILE MENU -->
+
             <button class="menu-btn"
                     id="menuBtn"
                     type="button">
@@ -270,6 +331,7 @@ header {
             </button>
 
         </nav>
+
     </header>
 
 
@@ -302,7 +364,7 @@ header {
         <div class="projects-grid">
 
 
-            <!-- PROJECT 01 -->
+            <!-- ================= PROJECT 01 ================= -->
 
             <div class="project-card">
 
@@ -336,7 +398,7 @@ header {
             </div>
 
 
-            <!-- PROJECT 02 -->
+            <!-- ================= PROJECT 02 ================= -->
 
             <div class="project-card">
 
@@ -361,40 +423,8 @@ header {
                     <span>SQL</span>
 
                 </div>
-<a href="https://github.com/ThenujiAdikari/personal-portfolio/raw/refs/heads/main/KMC-Event-Management-System-Source.zip"
-   class="project-btn">
-    View Project
-</a>
-            </div>
 
-
-            <!-- PROJECT 03 -->
-
-            <div class="project-card">
-
-                <div class="project-number">
-                    03
-                </div>
-
-                <h2>
-                    Smart Vehicle Management App
-                </h2>
-
-                <p>
-                    A mobile application for managing vehicle information,
-                    fuel consumption, maintenance, expenses and service
-                    reminders.
-                </p>
-
-                <div class="project-tech">
-
-                    <span>Flutter</span>
-                    <span>Firebase</span>
-                    <span>Mobile App</span>
-
-                </div>
-
-                <a href="#"
+                <a href="https://github.com/ThenujiAdikari/personal-portfolio/raw/refs/heads/main/KMC-Event-Management-System-Source.zip"
                    class="project-btn">
                     View Project
                 </a>
