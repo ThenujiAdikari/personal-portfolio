@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | Thenuji Adikari</title>
+
+    <!-- MAIN CSS -->
+   <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111c31;
+    color: white;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background: #0f172a;
+    border-bottom: 1px solid #1e293b;
+}
+
+.navbar {
+    max-width: 1200px;
+    height: 80px;
+    margin: auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #38bdf8;
+}
+
+.cv-btn {
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 11px 20px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.projects-page {
+    min-height: calc(100vh - 80px);
+    padding: 70px 30px 80px;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.projects-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 55px;
+}
+
+.section-label {
+    color: #38bdf8;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.projects-heading h1 {
+    font-size: 46px;
+    margin-bottom: 18px;
+}
+
+.projects-intro {
+    color: #94a3b8;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 15px;
+    padding: 32px;
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #38bdf8;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.project-number {
+    color: #38bdf8;
+    font-size: 40px;
+    font-weight: bold;
+    opacity: 0.3;
+    margin-bottom: 20px;
+}
+
+.project-card h2 {
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.project-card > p {
+    color: #94a3b8;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.project-tech span {
+    background: #162a43;
+    color: #38bdf8;
+    padding: 7px 11px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.project-btn {
+    margin-top: auto;
+    align-self: flex-start;
+
+    background: #38bdf8;
+    color: #0f172a;
+
+    padding: 11px 20px;
+    border-radius: 7px;
+
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-btn:hover {
+    background: #7dd3fc;
+}
+
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .cv-btn {
+        display: none;
+    }
+
+    .projects-heading h1 {
+        font-size: 36px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                Thenuji <span>Adikari</span>
+            </a>
+
+            <!-- NAVIGATION LINKS -->
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="skills.html">Skills</a>
+                </li>
+
+                <li>
+                    <a href="projects.html" class="active">Projects</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+            <!-- DOWNLOAD CV -->
+            <a href="documents/cv.pdf"
+               class="cv-btn"
+               download>
+                Download CV
+            </a>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="menu-btn"
+                    id="menuBtn"
+                    type="button">
+                ☰
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <main class="projects-page">
+
+        <!-- PAGE HEADING -->
+
+        <div class="projects-heading">
+
+            <p class="section-label">
+                What I've Built
+            </p>
+
+            <h1>
+                My Projects
+            </h1>
+
+            <p>
+                Here are some of the projects I have worked on while
+                developing my skills in web and software development.
+            </p>
+
+        </div>
+
+
+        <!-- ================= PROJECT CARDS ================= -->
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 01 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <h2>
+                    Personal Portfolio Website
+                </h2>
+
+                <p>
+                    A modern and responsive personal portfolio website
+                    created to showcase my skills, projects and
+                    professional information.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+
+                </div>
+
+                <a href="index.html"
+                   class="project-btn">
+                    View Project
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 02 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <h2>
+                    Event Management System
+                </h2>
+
+                <p>
+                    A web-based event management system designed to manage
+                    events, users, registrations and bookings through a
+                    structured database and web interface.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>ASP.NET</span>
+                    <span>Razor Pages</span>
+                    <span>SQL</span>
+
+                </div>
+
+                <a href="#"
+                   class="project-btn">
+                    View Project
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 03 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    03
+                </div>
+
+                <h2>
+                    Smart Vehicle Management App
+                </h2>
+
+                <p>
+                    A mobile application for managing vehicle information,
+                    fuel consumption, maintenance, expenses and service
+                    reminders.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>Flutter</span>
+                    <span>Firebase</span>
+                    <span>Mobile App</span>
+
+                </div>
+
+                <a href="#"
+                   class="project-btn">
+                    View Project
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= MOBILE MENU JAVASCRIPT ================= -->
+
+    <script>
+
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", function () {
+
+            navLinks.classList.toggle("show");
+
+        });
+
+    </script>
+
+</body>
+
+</html>
